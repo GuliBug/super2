@@ -206,4 +206,7 @@ footer .footer-b .footer-b-b {text-align: center;margin-top: 10px;display:block}
 footer .footer-b .footer-b-b a{font:12px/27px"";color:#999;}
 footer .footer-b .footer-b-b img{margin-top:14px;}
 
-
+.lc{position: fixed;right:5px;top:450px;}
+.lc .lc-t{width:38px;height:38px;background: url(../img/top_03.png) no-repeat -32px -45px;margin-bottom:4px;}
+.lc .lc-c{width:38px;height:38px;background: url(../img/top_03.png) no-repeat -32px -86px;margin-bottom:4px;}
+.lc .lc-b{width:38px;height:38px;background: url(../img/top_03.png) no-repeat -32px -126px;margin-bottom:4px;}
