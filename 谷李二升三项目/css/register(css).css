@@ -1,0 +1,28 @@
+*{margin:0 auto;}
+.margin{width:1000px;}
+header{height:74px;}
+nav{height:74px;}
+
+nav .max-img{background:url(../img/loginBg22.png.jpg)no-repeat center;height:440px;}
+nav .margin{position: relative;}
+nav .max-img .bd{width:339px;height:388px;background:#fff;position: absolute;right: 26px;top:26px;border: 1px solid #666;}
+nav .max-img .bd .bd-t{}
+nav .max-img .bd .bd-t ul{text-align: center;display: flex;justify-content: space-between}
+nav .max-img .bd .bd-t ul li{width:170px;height:46px;border: 1px solid #eee;}
+nav .max-img .bd .bd-t ul .active {border-bottom: none;}
+nav .max-img .bd .bd-t ul li p{font:14px/46px"";color:#666;}
+nav .max-img .bd form{margin:30px 0 0 40px;text-align: center;}
+nav .max-img .bd form input{display: block;width:248px;height:27px;margin-bottom: 25px;border:1px solid #ddd;color:#ddd;padding:5px;}
+nav .max-img .bd .zc{width:112px;height:36px;color:#fff;background:#f76625;border:1px solid #d82e00;display: inline-block;border-radius: 5px;font:14px/36px"";text-align: center;margin-left:40px;}
+nav .max-img .bd input[type="checkbox"]{border-radius: 2px;margin-top:3px;}
+
+nav .max-img .bd .form{margin:30px 0 0 40px;text-align: center;}
+nav .max-img .bd .form input{display: block;width:248px;height:27px;margin-bottom: 25px;border:1px solid #ddd;color:#ddd;padding:5px;}
+nav .max-img .bd .dl{width:112px;height:36px;color:#fff;background:#f76625;border:1px solid #d82e00;display: inline-block;border-radius: 5px;font:14px/36px"";text-align: center;margin-left:40px;}
+
+
+
+
+
+
+

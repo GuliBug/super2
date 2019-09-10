@@ -70,6 +70,14 @@ nav ul li p .xia{background:#eee;height:30px;display: block;}
 #banner .banner-l .l3{border-left:4px solid #6aa515;}
 #banner .banner-l .l4{border-left:4px solid #3ab3e0;}
 #banner .banner-l .l5{border-left:4px solid #997ad3;height:70px;}
+.box{width:960px;height:410px;position: relative;overflow: hidden}
+.imgbox{width:960px;height:410px;}
+.imgbox img{width:960px;height:410px;position: absolute;left:960px;;top:0;}
+.imgbox img:nth-child(1){left:0;}
+
+.btns input{width:40px;height:40px;background: rgba(200,200,200,0.5);border: none;position: absolute;top:160px;}
+#left{left:0;}
+#right{right:0;}
 
 
 main{overflow:hidden;background:#eee;}
