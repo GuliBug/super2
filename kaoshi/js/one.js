@@ -2,8 +2,8 @@
     class shopList{
         constructor(){
             this.url = "./data/goods.json";
-            this.box = document.querySelector(".pingjie");
-
+            this.box = document.querySelector(".yemian");
+            console.log(this.box)
             this.load();
             this.addEvent();
         } //请求ajax 接收数据
@@ -35,15 +35,13 @@
                </div>
                <div class="entry over">
                    <a href="#" class="over">${this.res[i].name}</a>
-                   <a href="#" class="over">${this.res[i].price}</a>
+                   <a href="#" class="over">${this.res[i].korea}</a>
                    <span class="jiage">￥<b>${this.res[i].price}</b></span>
                    <span class="delde">￥<del>${this.res[i].country}</del></span>
                    <div class="score"></div>
-                   <button style="width:100px;height:25px;
-                    display: block;color:#5f83d7;margin-top:30px;" class="btn">加入购物车</button>
+                   
                </div>
-                     </li>
-  
+                    
            ` 
           //  console.log(this.res[i].goodsId)
            }
@@ -61,9 +59,9 @@
                 if(target.className == "btn"){
                    
                 that.id  = target.parentNode.parentNode.getAttribute("abc");
-                
+                // console.log(that.id) 娶不到id值
                 console.log(target.parentNode.parentNode)  
-             
+                // 因为当前点击的父元素  是另外一个
 
                 that.Localstorage();           
                 }
@@ -73,7 +71,7 @@
          }
          Localstorage(){
            this.goods = localStorage.getItem("goods") ? JSON.parse(localStorage.getItem("goods")) : [];
-           //  判断是否是第一次存
+           //通过长度判断是否是第一次存
       
            if(this.goods.length < 1){
                this.goods.push({

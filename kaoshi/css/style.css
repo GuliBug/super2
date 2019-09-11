@@ -55,21 +55,32 @@ nav ul li p span{background:#fff;height:118px;display: block;}
 nav ul li p .xia{background:#eee;height:30px;display: block;}
 #banner{height:410px;background:#a98286;}
 #banner .banner-l{width:240px;float:left;background: #fff;height:410px;}
-#banner .banner-l ul{}
+#banner .banner-l ul{position: relative;}
 #banner .banner-l li{height:80px;padding-right: 20px;padding-left:15px;}
 #banner .banner-l li p{font:12px/28px"";display:block;}
 #banner .banner-l .l1 p em{background: url(../img/icons.png) no-repeat left;width:17px;height: 17px;display:inline-block;vertical-align:middle;background-position: -122px -34px;margin-right:8px;}
 #banner .banner-l .l2 p em{background: url(../img/icons.png) no-repeat left;width:17px;height: 17px;display:inline-block;vertical-align:middle;background-position: -156px -34px;margin-right:8px;}
 #banner .banner-l .l3 p em{background: url(../img/icons.png) no-repeat left;width:17px;height: 17px;display:inline-block;vertical-align:middle;background-position: -93px -70px;margin-right:8px;}
 #banner .banner-l .l4 p em{background: url(../img/icons.png) no-repeat left;width:17px;height: 17px;display:inline-block;vertical-align:middle;background-position: -122px -70px;margin-right:8px;}
-#banner .banner-l .l5 p em{background: url(../img/icons.png) no-repeat left;width:17px;height: 17px;display:inline-block;vertical-align:middle;background-position: -153px -70px;margin-right:8px;}
+#banner .banner-l .l5 p em{background: url(../img/icons.png) no-repeat left;width:17px;height: 17px;display:inline-block;vertical-align:middle;background-position: -156px -70px;margin-right:8px;}
 #banner .banner-l li a{font:12px/20px "";color:#888;margin-right:20px;}
 #banner .banner-l .l1{border-left:4px solid #f06680;}
+#banner .banner-l li:hover{background:#6e7788;color:#fff;}
+#banner .banner-l li:hover a{color:#fff;}
 
 #banner .banner-l .l2{border-left:4px solid #db9b3f;height:100px;}
 #banner .banner-l .l3{border-left:4px solid #6aa515;}
 #banner .banner-l .l4{border-left:4px solid #3ab3e0;}
 #banner .banner-l .l5{border-left:4px solid #997ad3;height:70px;}
+
+
+
+
+/* 下拉 */
+#banner .banner-l .nav-cont{width:612px;height:420px;  position: absolute; background: #fff; top:0; left: 240px; z-index: 1;border: 1px solid #ddd; box-sizing: border-box; padding:30px 0 0 30px;display: none;}
+#banner .banner-l .nav-cont a{float: left;width: 190px;height: 65px;margin-bottom: 40px;font:15px/65px "";}
+
+
 .box{width:960px;height:410px;position: relative;overflow: hidden}
 .imgbox{width:960px;height:410px;}
 .imgbox img{width:960px;height:410px;position: absolute;left:960px;;top:0;}

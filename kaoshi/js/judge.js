@@ -67,11 +67,11 @@
           
      
 
-       var objcart = document.querySelector(".cart");
+       var objcart = document.querySelector(".lc-c");
        
        objcart.onclick = function(){
         if(getCookie("s2")){
-            window.location.href = "http://localhost/kaoshi/shopping.html";
+            window.location.href = "http://localhost/kaoshi/register.html";
                
           }else{
             alert("请先进行登录")

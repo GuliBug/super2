@@ -7,18 +7,20 @@
 
            this.load();
            this.setList();
+           
         }
         load(){
             var that = this;
-            ajax({
+            $.ajax({
                 url:this.url,
                 success:function(res){
-                    that.res = JSON.parse(res);
+                    that.res = res
                     // console.log(that.res)
-                    that.setLocal();
-
                    
-                }
+                    that.setLocal();
+                   
+                },
+                async:false
             });
         }
         setLocal(){
@@ -34,8 +36,8 @@
                   //  console.log(this.res[i],this.goods[i].num)
                   if(this.res[i].goodsId == this.goods[j].id){
                   str += `
-                 <h3 abc ="${this.res[i].goodsId}">
-                  <tr class="center"> 
+               
+                  <tr class="center" abc ="${this.res[i].goodsId}"> 
                   <td class="p1">
                       <div class="l1">
                          <img src="${this.res[i].url}">
@@ -43,7 +45,7 @@
                   </td>
                   <td class="p2">
                       <p><a href="#" alt="${this.res[i].name}${this.res[i].price}"> 
-                      ${this.res[i].name}
+                      ${this.res[i].name} ${this.res[i].korea}
                          </a>
                       </p>
                       <a href="#">收藏</a>
@@ -57,21 +59,34 @@
                   <td class="p5">0</td>
                   <td class="p6">￥${this.goods[j].num*this.res[i].price}</td>
                 </tr>
-                </h3>
+                
                 
                    `
-                //    str2 += `${this.goods[j].num*this.res[i].price}`
+               
                  }
                }
              }
              this.tbody.innerHTML = str;
-             
-            //  this.sum.innerHTML = str2;       
+                   
         }
-         setList(){
-   
-            //   this.aprice = document.querySelector("aprice"); 
-            //   this.check = document.querySelector("check"); 
+        setList(){
+           this.total = document.querySelector(".sumAll")
+            this.sumAll = document.querySelectorAll(".p6")
+            // console.log(this.total,this.sumAll)
+            let arr  = [];//总价
+            this.sumu  = 0;
+
+       for(var i =0 ;i<this.sumAll.length;i++){
+        //    console.log(this.sumAll[i].innerHTML);
+           this.c  = this.sumAll[i].innerHTML
+           this.suma = parseInt(this.c.slice(1,this.c.length))
+           arr.push(this.suma);
+           this.sumu += arr[i];
+       }
+           //  console.log(sum)
+           this.total.innerHTML = this.sumu;
+
+         
               
            var that = this;
            this.tbody.addEventListener("click",function(eve){
@@ -79,7 +94,7 @@
                var target = e.target || e.srcElement;
                if(target.className =="delete"){
                   that.id = target.parentNode.parentNode.getAttribute("abc");
-                //   console.log(target.parentNode.parentNode)
+            //   console.log(target.parentNode.parentNode.parentNode)
                 target.parentNode.parentNode.remove();
 
                   that.set((i)=>{
@@ -89,20 +104,25 @@
                   
                }
            });
+           
            this.tbody.addEventListener("input",function(eve){
               var e = eve || window.event;
               var target = e.target || e.srcElement;
               if(target.className == "num"){
                   // 8.保存点击删除的商品的数量和id
-                //   console.log(that.sum = target.parentNode.parentNode.nextElementSibling.firstElementChild)
+                
+                  that.sum = target.parentNode.parentNode.lastElementChild
 
-                  that.sum  = target.parentNode.parentNode.nextElementSibling.firstElementChild
+
+                 that.bprice =target.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.innerHTML
+                //  console.log(target.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.innerHTML)
+                //   that.bprice = target.parentNode.parentNode.previousElementSibling.lastElementChild.innerHTML
                   
-                  that.bprice = target.parentNode.parentNode.previousElementSibling.firstElementChild.innerHTML
                   that.eprice = that.bprice.slice(1,that.bprice.length)
+            
 
                   that.val = target.value;
-                  that.id = target.parentNode.parentNode.parentNode.getAttribute("abc");
+                  that.id = target.parentNode.parentNode.getAttribute("abc");
                   // 9.从localstorage中找到对应的商品数据
                   that.set(function(i){
                       // 修改
@@ -110,12 +130,18 @@
                       that.goods[i].num = that.val;
 
                     //拿到当前点击的兄弟价格元素，然后把乘好的价格 添加到页面上
+                  
                     for(var j = 0;j<that.goods.length;j++){
-                            that.sum.innerHTML =  (parseInt (that.goods[i].num)) * (parseInt (that.eprice));   
-                            // that.sum.innerHTML =  (parseInt (that.goods[i].num)) * that.res[i].price 
+                            // that.sum.innerHTML =  (parseInt (that.goods[i].num)) * (parseInt (that.eprice));   
+                             that.sum.innerHTML   = (parseInt(that.goods[i].num)) * parseInt(that.eprice)
+                             
+                            //  console.log( (parseInt(that.goods[i].num))*parseInt(that.eprice) )
+                             console.log( parseInt(that.eprice))
+                            //  console.log(that.sumAll[i].innerHTML)
+                            // console.log(that.sumAll[j].innerHTML)
+                             
                         }
                     
-
 
                   })
               }
@@ -140,4 +166,19 @@
 
     new  Car();
 
+    var objcart = document.querySelector(".tiaozhuan");
+    var objcart2 = document.querySelector(".tiaozhuan2");
+       
+    objcart.onclick = function(){
+     
+         window.location.href = "http://localhost/kaoshi/index.html";
+            
+      
+    }
+    objcart2.onclick = function(){
+     
+        window.location.href = "http://localhost/kaoshi/list.html";
+           
+     
+   }
 })();
