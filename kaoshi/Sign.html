@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+  .z1{position: absolute;width:258px;height:23px;border: 1px solid #a45616;top:50px;display: none}
+  .z2{position: absolute;width:258px;height:23px;border: 1px solid #a45616;top:118px;display: none}
+  .z3{position: absolute;width:258px;height:23px;border: 1px solid #a45616;top:183px;display: none}
+  form span{font:12px/23px "";color:#a45616;display: block;}
+</style>
+<body>
+        <link rel="stylesheet" href="./css/public.css">
+        <link rel="stylesheet" href="./css/register(css).css">
+ <header>
+ 
+ </header>
+ <nav>
+      <div class="max-img">
+          <div class="margin">
+              <div class="bd">
+                 <div class="bd-t">
+                     <ul>
+                         <li class="active"><p>免费注册</p></li>
+                         <li ><p>登录</p></li>
+                     </ul>
+                 </div>
+                <form action="">
+   
+                           <input type="text" name="" id="user" placeholder="用户名/手机号"><span class="z1">sadassaasdas</span>
+                          
+                           <input type="text" name="" id="pass" placeholder="密码"><span class="z2"></span>
+                           <input type="text" name="" id="pass2" placeholder="请再次输入密码"><span class="z3"></span>
+                          
+                           
+                        </form>
+                              <a href="#" class="zc zhuce" >注册完成</a>
+                              <input type="checkbox"><span><a href="#">《要红酒注册协议》</a>
+       <!--            
+                              <div class="form">
+          
+                                   <input type="text" name="" id="user" placeholder="用户名/手机号">
+                                  
+                                   <input type="text" name="" id="pass" placeholder="密码">
+                                  
+                                  
+                                   
+                              </div>
+                               <a href="#" class="dl">登录</a>
+                 -->
+                    
+   
+        </div>
+      </div>
+    </div>
+ </nav>
+ <footer>
+
+ </footer>
+</body>
+<script src="./libo/jquery.js"></script>
+<script src="./js/cookie.js"></script>
+<script>
+       
+        var ouser = $("#user")[0];
+        // console.log(ouser)
+        var opass = $("#pass")[0];
+        var opass2 = $("#pass2")[0];
+       
+        var obtn = $(".zhuce")[0];
+        // console.log(obtn)
+        var ospan0 = document.getElementsByTagName("span")[0];
+        var ospan1 = document.getElementsByTagName("span")[1];
+        var ospan2 = document.getElementsByTagName("span")[2];
+       
+
+
+       
+        var x  = false;
+        var y  = false;
+        var z  = false;
+       
+       ouser.onblur = function(){
+                     var useval = ouser.value;
+                     
+                     var usreg = /^[\u4e00-\u9fff\w]{5,16}$/
+                      if(usreg.test(useval)){
+                        
+                         ospan0.innerHTML = "用户名格式正确"
+                         ospan0.style.cssText = "display:block"
+        
+                         x = true;
+                         
+                     }else{
+                      
+                        ospan0.innerHTML = "用户名格式不正确"
+                        ospan0.style.cssText = "display:block"
+                        x= false;
+                     }
+        
+                 }
+                  opass.onblur = function(){
+        
+                     if(opass.value.length>=6 && opass.value.length<=20){
+                     var a  = 0;
+                     var b  = 0;
+                     var c  = 0;
+        
+                     var opreg = /\d+/g;
+        
+                     var a = opreg.test(this.value) ? 1:0;
+        
+                    var  opreg2 = /\d[a-zA-Z]+/g;
+                    var b = opreg2.test(this.value) ? 1:0;
+                    var opreg3 = /[^a-zA-Z\d]+/g;
+                    var c = opreg3.test(this.value) ? 1:0;
+        
+                    var str = "";
+                    switch(a+b+c){
+                            case 1:
+                                str = "密码简单";break;
+                            case 2:
+                                str = "密码一般";break;
+                            case 3:
+                                str = "密码困难";break;
+        
+                       
+                    }
+                    
+                    ospan1.innerHTML =  str;
+                    ospan1.style.cssText = "display:block"
+                    y=true;
+        
+                 }else{
+                    // ospan1.style.cssText = "display:block"
+                   
+                    ospan1.innerHTML =  "输入有误"
+                    ospan1.style.cssText = "display:block"
+                  y=false;
+                 }
+        
+        
+                }
+                
+                opass2.onblur = function(){
+                     if(opass.value==opass2.value && opass2.value!=""){
+                       
+                         ospan2.innerHTML =  "两次密码一致"
+                         ospan2.style.cssText = "display:block"
+                         z= true;
+                     }else{
+                        
+                         ospan2.innerHTML =  "两次密码不一致"
+                         ospan2.style.cssText = "display:block"
+                        z= false;
+                     }
+        
+                }
+                
+                
+        
+                if(window.localStorage.userArr){//判断是否存在
+                var array = JSON.parse(window.localStorage.userArr);
+            }else{
+                array = [];//创建一个新数组
+            }
+                
+        obtn.onclick = function(){
+                // var username = document.getElementById('username').value;
+                // var password = document.getElementById('password').value;
+                var  useval  = ouser.value;
+                var  passval = opass.value;
+                //遍历数组进行匹配
+               
+                for(var i=0;i<array.length;i++){
+                    //判断是否有相同账号
+                    if(useval==array[i].useval){
+                        alert("该账号已存在");
+                        return;
+                    }
+                }
+                //创建对象
+                var obj = {useval:useval,passval:passval,score:0}
+                array.push(obj);
+                window.localStorage.userArr=JSON.stringify(array);
+                
+                if(x&&y&&z){
+                        alert("注册成功")
+                        window.location.href = "http://localhost/kaoshi/register.html";
+                    }else{
+                        alert("请填写完整信息或用户名重复")
+                    }
+        
+            }    
+           
+
+           
+
+        
+        
+        
+
+        // obtn.onclick = function(){
+        //     if(x&&y&&z&&d&&s){
+        //         alert("提交成功")
+        //     }else{
+        //         alert("提交失败")
+        //     }
+        // }
+  
+    </script>
+</html>

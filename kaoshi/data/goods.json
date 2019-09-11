@@ -1,0 +1,82 @@
+﻿[
+	{
+		        "name":"新西兰怀帕拉山丘马尔堡长相思干白",
+	            "price":"222",
+	            "url":"img/k1.jpg",
+				"korea":"Hardys Bankside Moscato",
+				"country":"500",
+				"goodsId":"asjg"
+	},
+	{
+	            "name":"法国蓝极光干白葡萄酒",
+	            "price":"700",
+	            "url":"img/k2.jpg",
+				"goodsId":"aasd",
+	            "korea":"GRANT BURGE gb32 Chardonnay",
+				"country":"1200"
+	},
+	{
+	            "name":"法国拉菲莱斯古堡甜白",
+	            "price":"520",
+	            "url":"img/k3.jpg",
+				"goodsId":"aa123123sd",
+	            "korea":"SANTA LUZ PRODUCT OF CHILE",
+				"country":"600"
+	},
+	{
+	            "name":"拉伊尔半甜白葡萄酒",
+	            "price":"450",
+	            "url":"img/k4.jpg",
+				"goodsId":"a123asd",
+	            "korea":"Grand Marrrenon Blanc Luberon",
+				"country":"600"
+	},
+	{       
+	            "name":"澳大利亚夏迪班塞经典莫斯卡托甜白",
+	            "price":"800",
+	            "url":"img/k5.jpg",
+				"goodsId":"aa45sd",
+	            "korea":"Waipara Hills Marlborough Riesling",
+				"country":"700"
+	},
+	{
+	            "name":"拉菲传说波尔多干白葡萄酒2012",
+	            "price":"900",
+	            "url":"img/k6.jpg",
+				"goodsId":"a789798asd",
+	            "korea":"Waipara Hills Marlborough Sauvignon Blanc",
+				"country":"1000"
+	},
+	{
+	            "name":"智利蒙特斯经典莎当妮干白葡萄酒 2013",
+	            "price":"1000",
+	            "url":"img/k7.jpg",
+				"goodsId":"aaasasdasd",
+	            "korea":"L'instant Bleu Muscadet",
+				"country":"1200"
+	},
+	{
+	            "name":"澳大利亚 奔富寇兰山秋日雷司令白葡萄酒  2011",
+	            "price":"220",
+	            "url":"img/k8.jpg",
+				"goodsId":"a132123123asd",
+	            "korea":"images/Germany.png",
+				"country":"300"
+	},
+	{
+	            "name":"法国约瑟夫杜鲁安拉佛瑞白葡萄酒",
+	            "price":"999",
+	            "url":"img/k9.jpg",
+				"goodsId":"aasasdas8d687sad",
+				"korea":"SAU TERNES",
+				"country":"1200"
+	},
+	{
+				"name":"法国约瑟夫杜鲁安宝力梦夏思白葡萄酒",
+				"price":"308.56",
+				"url":"img/k10.jpg",
+				"goodsId":"aasasdas8d612387sad",
+				"korea":"LA RAY SPANISH ENTRY LEVELS WINS",
+				"country":"400"
+}
+]
