@@ -28,7 +28,7 @@
            var that  = this;
            var str = "";
            for(var i = 0;i<this.res.length;i++){
-               str += `
+               str += `<a href="http://localhost/kaoshi/details.html">
                <li abc=${this.res[i].goodsId}>
                <div class="img">
                  <img src=${this.res[i].url}>
@@ -41,7 +41,8 @@
                    <div class="score"></div>
                    
                </div>
-                    
+               </li>
+               </a>  
            ` 
           //  console.log(this.res[i].goodsId)
            }
